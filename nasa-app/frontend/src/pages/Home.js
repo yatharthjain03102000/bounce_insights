@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <h1>{data.title}</h1>
+    <h1 className="title">{data.title}</h1>
             <img src={data.url} alt={data.title} className="apod-image" />
             <p>{data.explanation}</p>
         </div>

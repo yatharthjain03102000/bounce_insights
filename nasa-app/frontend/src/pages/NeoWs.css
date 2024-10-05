@@ -1,84 +1,142 @@
-/* src/pages/NeoWs.css */
+/* Ensure full viewport coverage for the background image */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Main container for the Near Earth Object (NEO) section */
+/* Main container for the Near Earth Object (NEO) section */
 .neo-ws-container {
-    padding: 2rem;
+    padding: 4rem 2rem;
     text-align: center;
-    background-color: #f9f9f9;
-    /* Light background for contrast */
-    border-radius: 10px;
-    /* Rounded corners */
-    max-width: 1200px;
-    /* Limit width */
-    margin: auto;
-    /* Center the container */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
+    background-image: url('../Images/comet.png');
+    background-size: auto;
+    /* Use the image's original size */
+    background-position: top left;
+    /* Start tiling from the top left corner */
+    background-repeat: repeat;
+    /* Repeat the background image */
+    background-attachment: scroll;
+    /* Allow the background to scroll with the content */
+    width: 100vw;
+    /* Full viewport width */
+    min-height: 100vh;
+    /* Minimum height to cover the full viewport */
+    margin: 0;
+    /* Remove default margin */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    /* Remove border radius to cover the entire screen */
+    box-shadow: none;
+    /* Remove box shadow */
+    color: white;
+    transition: box-shadow 0.3s ease;
 }
 
+/* Hover effect to make the container stand out */
+.neo-ws-container:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Main title styling */
 h1 {
-    font-size: 2.5rem;
-    /* Larger font size for title */
-    color: #333;
-    /* Darker text for better readability */
-    margin-bottom: 1.5rem;
-    /* Space below title */
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
+/* Loading text styles */
 .loading {
-    font-size: 1.5rem;
-    color: #007bff;
-    /* Blue color for loading text */
+    font-size: 1.8rem;
+    color: #00aaff;
     margin-top: 2rem;
 }
 
+/* Grid layout for displaying NEO cards */
 .neo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive grid */
-    gap: 1.5rem;
-    /* Increased gap for better spacing */
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
 }
 
+/* Individual NEO card styles */
 .neo-card {
-    background-color: #fff;
-    /* White background for cards */
-    padding: 1.5rem;
-    /* Increased padding for cards */
-    border-radius: 8px;
-    /* Rounded corners for cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Shadow for depth */
-    transition: transform 0.3s ease;
-    /* Smooth hover effect */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Increased transparency */
+    backdrop-filter: blur(6px) brightness(0.8);
+    /* Added brightness filter for better readability */
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    /* Left align text in cards */
 }
 
+/* Card hover effect for better interaction */
 .neo-card:hover {
     transform: translateY(-5px);
-    /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Title inside NEO card (date) */
 .neo-card h2 {
     margin-top: 0;
-    font-size: 1.5rem;
-    /* Larger font size for dates */
-    color: #282c34;
-    /* Dark text for better visibility */
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Styling for each item inside the NEO card */
 .neo-item {
-    font-size: 1.1rem;
-    /* Slightly larger font size for list items */
-    color: #555;
-    /* Dark grey for item text */
-    padding: 0.5rem 0;
-    /* Padding for list items */
+    font-size: 1.2rem;
+    color: #444;
+    padding: 0.75rem 0;
     border-bottom: 1px solid #eee;
-    /* Separator line */
+    transition: color 0.2s ease;
 }
 
+/* Remove border for the last item in the list */
 .neo-item:last-child {
     border-bottom: none;
-    /* Remove border for last item */
+}
+
+/* Hover effect for individual items */
+.neo-item:hover {
+    color: #007bff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .neo-grid {
+        gap: 1.5rem;
+    }
+
+    .neo-card {
+        padding: 1.5rem;
+    }
+
+    .neo-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .neo-item {
+        font-size: 1rem;
+    }
 }
