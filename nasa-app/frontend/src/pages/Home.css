@@ -1,56 +1,99 @@
-/* nasa-app/frontend/src/pages/Home.css */
+/* src/pages/Home.css */
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
 }
 
 .home-container {
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full viewport width */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    background-image: url('../Images/galaxy.png'); /* Background image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent image repeating */
-    color: white; /* Ensure text is visible on the background */
-    text-align: center;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    background-image: url('../Images/galaxy.png');
+    /* Background image */
+    background-size: cover;
+    /* Ensure the image covers the entire background */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent image repeating */
+    position: relative;
+    /* Position for overlay */
+}
+
+.content-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent card background */
+    border-radius: 16px;
+    /* Rounded corners */
     padding: 2rem;
+    /* Internal spacing */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow */
+    text-align: center;
+    /* Center text */
+    transition: transform 0.3s ease;
+    /* Smooth transition */
 }
 
-h1 {
-    font-size: 3rem; /* Larger heading for better visibility */
-    color: white; /* White text to stand out */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Enhance text readability */
-    margin-bottom: 1.5rem;
-}
-
-p {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.apod-image {
-    width: 80%;
-    max-width: 600px; /* Limit max size for large screens */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow */
-    margin-top: 2rem;
+.content-card:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect */
 }
 
 .title {
-    color: rgb(202, 189, 189); /* Ensure the heading is visible on the background */
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+    font-size: 2.5rem;
+    /* Adjust font size */
+    color: #FFD700;
+    /* Gold color for better visibility */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    font-size: 1.2rem;
+    /* Smaller font for date */
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.apod-image {
+    width: 100%;
+    /* Full width */
+    max-width: 600px;
+    /* Limit max size for large screens */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow */
+    margin-top: 1.5rem;
+}
+
+.explanation {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 1.5rem 0;
+}
+
+.copyright {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    /* Slightly transparent text */
+    margin-top: 1rem;
 }
 
 .loading,

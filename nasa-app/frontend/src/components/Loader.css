@@ -1,0 +1,36 @@
+/* Loader.css */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.skeleton-card {
+    width: 250px;
+    /* Fixed width for skeleton */
+    height: 200px;
+    /* Fixed height for skeleton */
+    background-color: #555;
+    /* Skeleton color */
+    border-radius: 12px;
+    /* Rounded corners */
+    margin: 0 1rem;
+    /* Spacing between cards */
+    animation: pulse 1.5s infinite;
+    /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

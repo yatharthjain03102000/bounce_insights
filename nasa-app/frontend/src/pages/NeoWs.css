@@ -13,37 +13,54 @@ html {
 }
 
 /* Main container for the Near Earth Object (NEO) section */
-/* Main container for the Near Earth Object (NEO) section */
 .neo-ws-container {
     padding: 4rem 2rem;
     text-align: center;
     background-image: url('../Images/comet.png');
-    background-size: auto;
-    /* Use the image's original size */
-    background-position: top left;
-    /* Start tiling from the top left corner */
-    background-repeat: repeat;
-    /* Repeat the background image */
-    background-attachment: scroll;
-    /* Allow the background to scroll with the content */
-    width: 100vw;
-    /* Full viewport width */
+    /* Ensure the path is correct */
+    background-size: cover;
+    /* Ensure the background image covers the container */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent repeating */
+    background-attachment: fixed;
+    /* Keep the background fixed */
     min-height: 100vh;
-    /* Minimum height to cover the full viewport */
-    margin: 0;
-    /* Remove default margin */
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 0;
-    /* Remove border radius to cover the entire screen */
-    box-shadow: none;
-    /* Remove box shadow */
+    /* Full viewport height */
     color: white;
-    transition: box-shadow 0.3s ease;
 }
 
-/* Hover effect to make the container stand out */
-.neo-ws-container:hover {
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+/* Search bar styles */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.search-input {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+.search-input:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Search icon styles */
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #aaa;
 }
 
 /* Main title styling */
@@ -54,10 +71,16 @@ h1 {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Loading text styles */
+/* Loading and error text styles */
 .loading {
     font-size: 1.8rem;
     color: #00aaff;
+    margin-top: 2rem;
+}
+
+.error {
+    font-size: 1.8rem;
+    color: red;
     margin-top: 2rem;
 }
 
@@ -117,11 +140,22 @@ h1 {
     color: #007bff;
 }
 
+/* No results message */
+.no-results {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-top: 2rem;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
+    }
+
+    .search-input {
+        width: 80%;
     }
 
     .neo-grid {
@@ -138,5 +172,9 @@ h1 {
 
     .neo-item {
         font-size: 1rem;
+    }
+
+    .search-icon {
+        font-size: 1.2rem;
     }
 }

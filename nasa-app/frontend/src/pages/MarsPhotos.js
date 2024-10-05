@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MarsPhotos.css';
+import Loader from '../components/Loader'; // Loading component
+import ErrorMessage from '../components/Error'; // Error message component
+import PhotoCard from '../components/Photocard'; // PhotoCard component
 
 const MarsPhotos = () => {
     const [rover, setRover] = useState('Curiosity');
@@ -9,7 +12,6 @@ const MarsPhotos = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // Fetch Mars photos from API
     const fetchMarsPhotos = async () => {
         setLoading(true);
         setError('');
@@ -28,33 +30,12 @@ const MarsPhotos = () => {
         }
     };
 
-    // Handle background rotation on scroll
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const rotation = scrollPosition / 10; // Adjust this for rotation speed
-
-            // Select background container and apply rotation
-            const background = document.querySelector('.mars-background');
-            if (background) {
-                background.style.transform = `rotate(${rotation}deg)`;
-            }
-        };
-
-        // Add event listener for scroll
-        window.addEventListener('scroll', handleScroll);
-
-        // Cleanup event listener when component unmounts
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+        fetchMarsPhotos();
+    }, [rover, sol]);
 
     return (
         <div className="mars-photos-container">
-            {/* Rotating background */}
-            <div className="mars-background"></div>
-
             <div className="controls">
                 <h1>Mars Rover Photos</h1>
                 <div className="controls-inner">
@@ -71,25 +52,13 @@ const MarsPhotos = () => {
                     <button onClick={fetchMarsPhotos} className="fetch-button">Fetch Photos</button>
                 </div>
             </div>
-            {loading && <div className="loading">Loading photos...</div>}
-            {error && <div className="error">{error}</div>}
+
+            {loading && <Loader />}
+            {error && <ErrorMessage message={error} />}
+
             <div className="photos-grid">
                 {photos.map((photo) => (
-                    <div key={photo.id} className="photo-card">
-                        <img
-                            src={photo.img_src}
-                            alt={`${photo.rover.name} - ${photo.camera.full_name}`}
-                            className="photo"
-                        />
-                        <div className="photo-info">
-                            <p><strong>Rover:</strong> {photo.rover.name}</p>
-                            <p><strong>Camera:</strong> {photo.camera.full_name}</p>
-                            <p><strong>Date Taken:</strong> {photo.earth_date}</p>
-                            <p><strong>Landing Date:</strong> {photo.rover.landing_date}</p>
-                            <p><strong>Launch Date:</strong> {photo.rover.launch_date}</p>
-                            <p><strong>Status:</strong> {photo.rover.status}</p>
-                        </div>
-                    </div>
+                    <PhotoCard key={photo.id} photo={photo} />
                 ))}
             </div>
         </div>

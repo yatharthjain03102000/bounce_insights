@@ -4,18 +4,6 @@ body.dark-mode {
     color: #ffffff;
 }
 
-body.dark-mode .navbar-links a {
-    color: #ffffff;
-}
-
-body.dark-mode .navbar-links .active a {
-    color: #61dafb;
-}
-
-body.dark-mode .dark-mode-toggle {
-    color: #ffffff;
-}
-
 .navbar {
     background-color: #282c34;
     padding: 1rem;
@@ -23,12 +11,16 @@ body.dark-mode .dark-mode-toggle {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    /* Sticky navbar */
+    top: 0;
+    /* Stick to the top */
+    z-index: 1000;
+    /* Ensure it stays above other content */
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    color: white;
+    color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -42,7 +34,6 @@ body.dark-mode .dark-mode-toggle {
 }
 
 .navbar-links li {
-    margin: 0 1rem;
     position: relative;
 }
 
@@ -65,7 +56,6 @@ body.dark-mode .dark-mode-toggle {
     display: flex;
     align-items: center;
     gap: 1rem;
-    /* Add some space between the button and the dropdown */
 }
 
 .dark-mode-toggle {
@@ -83,8 +73,7 @@ body.dark-mode .dark-mode-toggle {
 
 .dropdown {
     position: relative;
-    display: none;
-    /* Hide dropdown by default */
+    display:none;
 }
 
 .dropdown-title {
@@ -127,17 +116,19 @@ body.dark-mode .dark-mode-toggle {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    /* Change to allow click interaction */
+}
+
+/* Show dropdown on toggle */
+.dropdown-content.show {
+    display: block;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
-    }
-
-    .dropdown {
-        display: block;
-        /* Show dropdown on small screens */
+        /* Hide links on smaller screens */
     }
 
     .navbar-actions {
@@ -149,4 +140,17 @@ body.dark-mode .dark-mode-toggle {
         order: -1;
         /* Display dropdown first */
     }
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+    /* Darker background for dark mode */
+}
+
+body.dark-mode .navbar-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .dark-mode-toggle {
+    color: #ffffff;
 }

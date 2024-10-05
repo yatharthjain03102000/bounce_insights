@@ -1,6 +1,9 @@
+// src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
+import Loader from '../components/Loader';
+import ErrorMessage from '../components/Error'; // Import the ErrorMessage component
 
 const Home = () => {
     const [data, setData] = useState(null);
@@ -13,7 +16,7 @@ const Home = () => {
                 const response = await axios.get('http://localhost:5001/api/apod');
                 setData(response.data);
             } catch (err) {
-                setError('Error fetching APOD');
+                setError('Error fetching APOD. Please try again.');
             } finally {
                 setLoading(false);
             }
@@ -22,14 +25,18 @@ const Home = () => {
         fetchAPOD();
     }, []);
 
-    if (loading) return <div className="loading">Loading...</div>;
-    if (error) return <div className="error">{error}</div>;
+    if (loading) return <Loader />;
+    if (error) return <ErrorMessage message={error} />;
 
     return (
         <div className="home-container">
-    <h1 className="title">{data.title}</h1>
-            <img src={data.url} alt={data.title} className="apod-image" />
-            <p>{data.explanation}</p>
+            <div className="content-card">
+                <h1 className="title">{data.title}</h1>
+                <h4 className="date">{data.date}</h4>
+                <img src={data.url} alt={data.title} className="apod-image" />
+                <p className="explanation">{data.explanation}</p>
+                <p className="copyright">© {data.copyright}</p>
+            </div>
         </div>
     );
 };
