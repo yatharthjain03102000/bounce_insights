@@ -1,12 +1,14 @@
 /* src/components/Navbar.css */
+
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
 
 .navbar {
-    background-color: #282c34;
-    padding: 1rem;
+    background-color: #0033a0b5;
+    padding: 1rem 2rem;
+    /* Increased padding for a wider navbar */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +19,8 @@ body.dark-mode {
     /* Stick to the top */
     z-index: 1000;
     /* Ensure it stays above other content */
+    margin-bottom: 1rem;
+    /* Add space below the navbar */
 }
 
 .navbar-brand {
@@ -25,12 +29,19 @@ body.dark-mode {
     font-weight: bold;
 }
 
+.navbar-logo {
+    height: 80px;
+    /* Adjust the height as necessary */
+    margin-right: 10px;
+}
+
 .navbar-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1rem;
+    gap: 10rem;
+    /* Increased gap between links for more space */
 }
 
 .navbar-links li {
@@ -44,18 +55,27 @@ body.dark-mode {
     transition: color 0.3s ease;
 }
 
+/* Active link color */
 .navbar-links .active a {
     color: #61dafb;
 }
 
+/* Default hover effect for light mode */
 .navbar-links a:hover {
     color: #61dafb;
+}
+
+/* Hover effect for dark mode */
+body.dark-mode .navbar-links a:hover {
+    color: #61dafb;
+    /* Set your desired hover color in dark mode */
 }
 
 .navbar-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    /* Increased gap for navbar actions */
 }
 
 .dark-mode-toggle {
@@ -71,9 +91,14 @@ body.dark-mode {
     color: #61dafb;
 }
 
+/* Ensure light mode toggle also has hover effect */
+.light-mode-toggle:hover {
+    color: #61dafb;
+}
+
 .dropdown {
     position: relative;
-    display:none;
+    display: none;
 }
 
 .dropdown-title {
@@ -85,6 +110,7 @@ body.dark-mode {
 
 .dropdown-title:hover {
     color: #61dafb;
+    /* Set your desired hover color */
 }
 
 .dropdown-content {
@@ -112,6 +138,7 @@ body.dark-mode {
 
 .dropdown-content li a:hover {
     background-color: #61dafb;
+    /* Set your desired hover background color */
 }
 
 .dropdown:hover .dropdown-content {
@@ -149,8 +176,10 @@ body.dark-mode .navbar {
 
 body.dark-mode .navbar-links a {
     color: #ffffff;
+    /* Ensure links are white in dark mode */
 }
 
 body.dark-mode .dark-mode-toggle {
     color: #ffffff;
+    /* Ensure toggle button is visible in dark mode */
 }

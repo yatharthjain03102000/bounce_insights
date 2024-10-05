@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import nasalogo from '../Images/nasa.svg';
 
 const Navbar = () => {
     const location = useLocation();
@@ -15,7 +16,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-brand">NASA App</div>
+            <Link to="/" className="navbar-brand">
+                <img src={nasalogo} alt="NASA Logo" className="navbar-logo" />
+            </Link>
             <ul className="navbar-links">
                 <li className={location.pathname === '/' ? 'active' : ''}>
                     <Link to="/">Astrology Picture Of The Day</Link>

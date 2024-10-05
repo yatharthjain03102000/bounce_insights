@@ -14,7 +14,7 @@ app.use('/api/mars-photos', require('./routes/marsPhotos'));
 
 // New routes
 app.use('/api/neows', require('./routes/neows'));             // Near Earth Object Web Service
-app.use('/api/nasa-images', require('./routes/nasaImages'));  // NASA Image and Video Library
+app.use('/api/nasa-images', require('./routes/nasaImages'));  // NASA Image and Video Library        // Space Weather Database Of Notifications, Knowledge, Information
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
