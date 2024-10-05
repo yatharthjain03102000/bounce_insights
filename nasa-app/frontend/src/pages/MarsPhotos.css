@@ -1,0 +1,29 @@
+/* nasa-app/frontend/src/pages/MarsPhotos.css */
+.mars-photos-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.controls {
+    margin-bottom: 1rem;
+}
+
+.controls select,
+.controls input,
+.controls button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.photo {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

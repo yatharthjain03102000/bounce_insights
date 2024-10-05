@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Home.css';
 
 const Home = () => {
     const [data, setData] = useState(null);
@@ -21,13 +22,13 @@ const Home = () => {
         fetchAPOD();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>{error}</div>;
+    if (loading) return <div className="loading">Loading...</div>;
+    if (error) return <div className="error">{error}</div>;
 
     return (
-        <div>
+        <div className="home-container">
             <h1>{data.title}</h1>
-            <img src={data.url} alt={data.title} style={{ width: '80%', height: 'auto' }} />
+            <img src={data.url} alt={data.title} className="apod-image" />
             <p>{data.explanation}</p>
         </div>
     );

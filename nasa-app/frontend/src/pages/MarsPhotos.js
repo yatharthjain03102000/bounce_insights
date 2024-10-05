@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './MarsPhotos.css';
 
 const MarsPhotos = () => {
     const [rover, setRover] = useState('Curiosity');
@@ -20,7 +21,8 @@ const MarsPhotos = () => {
     };
 
     return (
-        <div>
+        <div className="mars-photos-container">
+        <div className="controls">
             <h1>Mars Rover Photos</h1>
             <select onChange={(e) => setRover(e.target.value)}>
                 <option value="Curiosity">Curiosity</option>
@@ -34,7 +36,7 @@ const MarsPhotos = () => {
                 placeholder="Sol (Martian day)"
             />
             <button onClick={fetchMarsPhotos}>Fetch Photos</button>
-
+            </div>
             {loading && <div>Loading...</div>}
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {photos.map((photo) => (
