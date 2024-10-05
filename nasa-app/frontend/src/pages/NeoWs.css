@@ -1,0 +1,84 @@
+/* src/pages/NeoWs.css */
+.neo-ws-container {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    /* Light background for contrast */
+    border-radius: 10px;
+    /* Rounded corners */
+    max-width: 1200px;
+    /* Limit width */
+    margin: auto;
+    /* Center the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* Larger font size for title */
+    color: #333;
+    /* Darker text for better readability */
+    margin-bottom: 1.5rem;
+    /* Space below title */
+}
+
+.loading {
+    font-size: 1.5rem;
+    color: #007bff;
+    /* Blue color for loading text */
+    margin-top: 2rem;
+}
+
+.neo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive grid */
+    gap: 1.5rem;
+    /* Increased gap for better spacing */
+    margin-top: 2rem;
+}
+
+.neo-card {
+    background-color: #fff;
+    /* White background for cards */
+    padding: 1.5rem;
+    /* Increased padding for cards */
+    border-radius: 8px;
+    /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+    text-align: left;
+    /* Left align text in cards */
+}
+
+.neo-card:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+}
+
+.neo-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    /* Larger font size for dates */
+    color: #282c34;
+    /* Dark text for better visibility */
+}
+
+.neo-item {
+    font-size: 1.1rem;
+    /* Slightly larger font size for list items */
+    color: #555;
+    /* Dark grey for item text */
+    padding: 0.5rem 0;
+    /* Padding for list items */
+    border-bottom: 1px solid #eee;
+    /* Separator line */
+}
+
+.neo-item:last-child {
+    border-bottom: none;
+    /* Remove border for last item */
+}

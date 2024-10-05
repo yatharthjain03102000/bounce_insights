@@ -1,29 +1,119 @@
-/* nasa-app/frontend/src/pages/MarsPhotos.css */
+/* src/pages/MarsPhotos.css */
 .mars-photos-container {
     padding: 2rem;
     text-align: center;
+    background-color: #f9f9f9;
+    /* Light grey background for contrast */
+    border-radius: 10px;
+    /* Rounded corners for the container */
+    max-width: 1200px;
+    /* Limit the max width for larger screens */
+    margin: auto;
+    /* Center the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
 }
 
 .controls {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    /* Space below controls */
 }
 
-.controls select,
-.controls input,
-.controls button {
-    margin: 0.5rem;
-    padding: 0.5rem;
+.controls-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center align controls */
+    gap: 1rem;
+    /* Space between controls */
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* Larger font size for title */
+    color: #333;
+    /* Dark text color */
+    margin-bottom: 1rem;
+    /* Space below title */
+}
+
+.rover-select,
+.sol-input,
+.fetch-button {
+    padding: 0.5rem 1rem;
+    /* Increased padding for buttons and inputs */
     font-size: 1rem;
+    /* Font size for inputs */
+    border: 2px solid #007bff;
+    /* Border color */
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: border-color 0.3s;
+    /* Transition for border color on focus */
+}
+
+.rover-select:focus,
+.sol-input:focus {
+    border-color: #0056b3;
+    /* Darker blue border on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+.fetch-button {
+    background-color: #007bff;
+    /* Primary button color */
+    color: white;
+    /* Button text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Smooth transition */
+    border: none;
+    /* Remove border for button */
+}
+
+.fetch-button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.loading,
+.error {
+    font-size: 1.2rem;
+    /* Increased font size for messages */
+    color: #ff0000;
+    /* Red text for errors */
+    margin-top: 1rem;
+    /* Space above messages */
 }
 
 .photos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Responsive grid */
     gap: 1rem;
+    /* Space between images */
+    margin-top: 1rem;
+    /* Space above grid */
 }
 
 .photo {
     width: 100%;
+    /* Full width for images */
+    height: 150px;
+    /* Fixed height for images */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    transition: transform 0.3s ease;
+    /* Animation for hover effect */
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.photo:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
 }

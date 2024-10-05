@@ -1,0 +1,127 @@
+/* src/pages/NasaImageLibrary.css */
+.nasa-image-library-container {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    /* Light background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    max-width: 1200px;
+    /* Max width for larger screens */
+    margin: auto;
+    /* Center the container */
+}
+
+h3 {
+    font-size: 2rem;
+    /* Larger font size for the title */
+    margin-bottom: 1rem;
+    /* Spacing below the title */
+    color: #333;
+    /* Darker text color */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    /* Center the search bar */
+    margin-bottom: 1rem;
+    /* Spacing below the search bar */
+}
+
+.search-input {
+    padding: 10px;
+    /* Padding for input */
+    border: 1px solid #ccc;
+    /* Border style */
+    border-radius: 5px;
+    /* Rounded corners for input */
+    width: 300px;
+    /* Fixed width */
+    font-size: 1rem;
+    /* Font size for input */
+}
+
+.search-button {
+    padding: 10px 20px;
+    /* Padding for button */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners for button */
+    background-color: #007bff;
+    /* Primary color */
+    color: white;
+    /* Text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    margin-left: 10px;
+    /* Space between input and button */
+    transition: background-color 0.3s;
+    /* Smooth transition */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    /* Darker color on hover */
+}
+
+.loading,
+.error {
+    font-size: 1.2rem;
+    /* Increased font size for messages */
+    color: #ff0000;
+    /* Red text for errors */
+    margin-top: 1rem;
+    /* Space above the message */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Responsive grid */
+    gap: 2rem;
+    /* Space between images */
+    margin-top: 2rem;
+    /* Space above grid */
+}
+
+.image-card {
+    background-color: #fff;
+    /* White background for cards */
+    padding: 1rem;
+    /* Padding around content */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+    transition: transform 0.3s ease;
+    /* Animation for hover effect */
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+}
+
+.image {
+    width: 100%;
+    /* Full width for images */
+    height: 150px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Maintain aspect ratio */
+    border-radius: 5px;
+    /* Rounded corners for images */
+}
+
+.image-title {
+    margin-top: 0.5rem;
+    /* Space above title */
+    font-size: 1rem;
+    /* Font size for title */
+    color: #333;
+    /* Dark text color */
+}

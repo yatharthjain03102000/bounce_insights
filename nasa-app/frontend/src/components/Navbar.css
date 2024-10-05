@@ -1,4 +1,21 @@
 /* src/components/Navbar.css */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .navbar-links .active a {
+    color: #61dafb;
+}
+
+body.dark-mode .dark-mode-toggle {
+    color: #ffffff;
+}
+
 .navbar {
     background-color: #282c34;
     padding: 1rem;
@@ -9,6 +26,8 @@
 }
 
 .navbar-brand {
+    display: flex;
+    align-items: center;
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -24,6 +43,7 @@
 
 .navbar-links li {
     margin: 0 1rem;
+    position: relative;
 }
 
 .navbar-links a {
@@ -33,6 +53,100 @@
     transition: color 0.3s ease;
 }
 
+.navbar-links .active a {
+    color: #61dafb;
+}
+
 .navbar-links a:hover {
     color: #61dafb;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Add some space between the button and the dropdown */
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    color: #61dafb;
+}
+
+.dropdown {
+    position: relative;
+    display: none;
+    /* Hide dropdown by default */
+}
+
+.dropdown-title {
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.dropdown-title:hover {
+    color: #61dafb;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #282c34;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.dropdown-content li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #61dafb;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        /* Show dropdown on small screens */
+    }
+
+    .navbar-actions {
+        flex-direction: row;
+        /* Ensure components are in a row */
+    }
+
+    .dropdown {
+        order: -1;
+        /* Display dropdown first */
+    }
 }
