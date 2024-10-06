@@ -27,6 +27,7 @@ This project is a web application that provides various NASA-related data and im
 
     ```env
         NASA_API_KEY=your_nasa_api_key_here (mine is uXDNtyyAYxUi2ldvvWtrbRNhgRlIVhpR2WW2ff1u)
+        PORT=5001
     ```
 
 4. Start the backend server:
