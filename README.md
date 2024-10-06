@@ -36,7 +36,7 @@ This project is a web application that provides various NASA-related data and im
     node server.js
     ```
 
-    The backend server will be running on [http://localhost:5001](http://localhost:5001).
+    The backend server will be running on [https://bounce-insights-o2sf.onrender.com](https://bounce-insights-o2sf.onrender.com).
 
 ### Frontend
 

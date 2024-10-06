@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         const fetchAPOD = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/api/apod');
+                const response = await axios.get('https://bounce-insights-o2sf.onrender.com/api/apod');
                 setData(response.data);
             } catch (err) {
                 setError('Error fetching APOD. Please try again.');
