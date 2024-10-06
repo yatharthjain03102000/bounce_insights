@@ -22,7 +22,7 @@ const NasaImageLibrary = () => {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.get(`https://bounce-insights-o2sf.onrender.com/api/nasa-images/${searchTerm}`);
+            const response = await axios.get(`http://localhost:5001/api/nasa-images/${searchTerm}`);
             if (response.data && response.data.length > 0) {
                 setResults(response.data);
             } else {

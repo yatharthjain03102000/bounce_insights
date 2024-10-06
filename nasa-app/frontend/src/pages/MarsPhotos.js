@@ -16,7 +16,7 @@ const MarsPhotos = () => {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.get(`https://bounce-insights-o2sf.onrender.com/api/mars-photos/${rover.toLowerCase()}/${sol}`);
+            const response = await axios.get(`http://localhost:5001/api/mars-photos/${rover.toLowerCase()}/${sol}`);
             if (response.data.length === 0) {
                 setError('No photos available for the selected rover and sol.');
             } else {

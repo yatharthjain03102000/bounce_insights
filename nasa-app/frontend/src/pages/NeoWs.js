@@ -13,7 +13,7 @@ const NeoWs = () => {
     useEffect(() => {
         const fetchNeos = async () => {
             try {
-                const response = await axios.get('https://bounce-insights-o2sf.onrender.com/api/neows');
+                const response = await axios.get('http://localhost:5001/api/neows');
                 setNeos(response.data.near_earth_objects);
             } catch (error) {
                 console.error('Error fetching NeoWs data:', error);
