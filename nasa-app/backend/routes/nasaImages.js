@@ -2,7 +2,6 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-// NASA Image and Video Library Route
 router.get('/:searchTerm', async (req, res) => {
     const { searchTerm } = req.params;
     try {

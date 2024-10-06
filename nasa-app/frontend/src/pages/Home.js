@@ -1,10 +1,8 @@
-// src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
 import Loader from '../components/Loader';
-import ErrorMessage from '../components/Error'; // Import the ErrorMessage component
-
+import ErrorMessage from '../components/Error'; 
 const Home = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);

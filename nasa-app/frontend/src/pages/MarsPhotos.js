@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MarsPhotos.css';
-import Loader from '../components/Loader'; // Loading component
-import ErrorMessage from '../components/Error'; // Error message component
-import PhotoCard from '../components/Photocard'; // PhotoCard component
+import Loader from '../components/Loader'; 
+import ErrorMessage from '../components/Error'; 
+import PhotoCard from '../components/Photocard'; 
 
 const MarsPhotos = () => {
     const [rover, setRover] = useState('Curiosity');

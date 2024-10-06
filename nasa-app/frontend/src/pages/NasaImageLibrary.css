@@ -19,23 +19,15 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     background-image: url('../Images/solar.png');
     background-size: cover;
-    /* Ensure the background image covers the container */
     background-position: center;
-    /* Center the background image */
     background-repeat: no-repeat;
-    /* Prevent the image from repeating */
     height: 100vh;
-    /* Full viewport height */
     width: 100vw;
-    /* Full viewport width */
     color: white;
     display: flex;
     flex-direction: column;
-    /* Column layout */
     justify-content: space-between;
-    /* Space elements out vertically */
     align-items: center;
-    /* Center items horizontally */
     overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
@@ -47,16 +39,13 @@ h3 {
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     margin-top: 0;
-    /* Remove top margin to position at the top */
 }
 
 .search-bar {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-    /* Space below search bar */
     width: 100%;
-    /* Make search bar full width */
 }
 
 .search-input {
@@ -67,9 +56,7 @@ h3 {
     font-size: 1rem;
     transition: border-color 0.3s ease;
     background-color: rgba(255, 255, 255, 0.5);
-    /* Slightly transparent background */
     color: #333;
-    /* Text color */
 }
 
 .search-input:focus {
@@ -111,7 +98,6 @@ h3 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    /* Add margin at the bottom */
 }
 
 .image-grid {
@@ -123,7 +109,6 @@ h3 {
 
 .image-card {
     background-color: rgba(255, 255, 255, 0.5);
-    /* Slightly transparent background */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -176,7 +161,6 @@ h3 {
 @media (max-width: 768px) {
     .search-input {
         width: 80%;
-        /* Adjust search input width on smaller screens */
     }
 
     .image {
@@ -185,12 +169,10 @@ h3 {
 
     h3 {
         font-size: 2rem;
-        /* Adjust heading size on smaller screens */
     }
 
     .image-title {
         font-size: 0.9rem;
-        /* Adjust image title size on smaller screens */
     }
 }
 
@@ -222,18 +204,11 @@ button {
 
 .footer {
     margin-top: auto;
-    /* Push footer to the bottom */
     padding: 1rem 0;
-    /* Add some padding */
     width: 100%;
-    /* Full width */
     display: flex;
-    /* Flexbox for alignment */
     justify-content: center;
-    /* Center footer content */
     align-items: center;
-    /* Center items vertically */
     color: white;
     font-size: 1rem;
-    /* Font size for footer */
 }

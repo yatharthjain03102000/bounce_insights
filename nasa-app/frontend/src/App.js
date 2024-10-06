@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import MarsPhotos from './pages/MarsPhotos';
-import NeoWs from './pages/NeoWs';          // Import NeoWs page
-import NasaImageLibrary from './pages/NasaImageLibrary';  // Import NASA Image Library page
-import Navbar from './components/Navbar';   // Import Navbar
+import NeoWs from './pages/NeoWs';          
+import NasaImageLibrary from './pages/NasaImageLibrary'; 
+import Navbar from './components/Navbar';   
 
 
 
@@ -15,8 +15,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/mars-photos" element={<MarsPhotos />} /> 
-                <Route path="/neows" element={<NeoWs />} />                    {/* NeoWs route */}
-                <Route path="/nasa-image-library" element={<NasaImageLibrary />} />  {/* NASA Image Library route */}
+                <Route path="/neows" element={<NeoWs />} />                   
+                <Route path="/nasa-image-library" element={<NasaImageLibrary />} />  
             </Routes>
         </Router>
     );

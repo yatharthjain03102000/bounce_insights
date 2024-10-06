@@ -1,6 +1,6 @@
-// src/components/Photocard.js
+
 import React from 'react';
-import './Photocard.css'; // You can create a separate CSS file for photo card styling
+import './Photocard.css'; 
 
 const PhotoCard = ({ photo, onClick }) => {
     return (

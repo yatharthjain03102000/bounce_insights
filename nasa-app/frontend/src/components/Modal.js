@@ -1,6 +1,5 @@
-// src/components/Modal.js
 import React from 'react';
-import './Modal.css'; // You can create a separate CSS file for modal styling
+import './Modal.css'; 
 
 const Modal = ({ photo, onClose }) => {
     return (

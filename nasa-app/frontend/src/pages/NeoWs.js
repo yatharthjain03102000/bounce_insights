@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaRocket, FaSatellite, FaRuler, FaExclamationTriangle, FaSearch } from 'react-icons/fa'; // Icons for data display
-import './NeoWs.css'; // CSS for styling
-import Loader from '../components/Loader'; // Import the Loader component
+import './NeoWs.css'; 
+import Loader from '../components/Loader'; 
 
 const NeoWs = () => {
     const [neos, setNeos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState(''); // For filtering the NEOs
+    const [search, setSearch] = useState(''); 
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const NeoWs = () => {
         fetchNeos();
     }, []);
 
-    // Filter the NEOs based on search input
+    
     const filteredNeos = Object.entries(neos).filter(([date, objects]) =>
         objects.some((neo) => neo.name.toLowerCase().includes(search.toLowerCase()))
     );
@@ -41,7 +41,7 @@ const NeoWs = () => {
         <div className="neo-ws-container">
             <h1>Near Earth Objects</h1>
 
-            {/* Search Bar */}
+            
             <div className="search-container">
                 <input
                     type="text"
@@ -53,7 +53,6 @@ const NeoWs = () => {
                 <FaSearch className="search-icon" />
             </div>
 
-            {/* Display filtered NEO data */}
             <div className="neo-grid">
                 {filteredNeos.length > 0 ? (
                     filteredNeos.map(([date, objects]) => (

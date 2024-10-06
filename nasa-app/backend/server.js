@@ -8,13 +8,12 @@ const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.json());
 
-// Existing routes
+// Routes
+
 app.use('/api/apod', require('./routes/apod'));
 app.use('/api/mars-photos', require('./routes/marsPhotos'));
-
-// New routes
-app.use('/api/neows', require('./routes/neows'));             // Near Earth Object Web Service
-app.use('/api/nasa-images', require('./routes/nasaImages'));  // NASA Image and Video Library        // Space Weather Database Of Notifications, Knowledge, Information
+app.use('/api/neows', require('./routes/neows'));             
+app.use('/api/nasa-images', require('./routes/nasaImages'));  
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
