@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-
 app.use('/api/apod', require('./routes/apod'));
 app.use('/api/mars-photos', require('./routes/marsPhotos'));
 app.use('/api/neows', require('./routes/neows'));             
